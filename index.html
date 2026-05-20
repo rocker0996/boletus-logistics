@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Boletus-LT — Регулярные перевозки с температурным режимом</title>
+<meta name="description" content="Boletus-LT — регулярные перевозки продуктов питания с температурным контролем. Консолидация грузов, B2B."/>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary": "#1f2425",
+                "surface-dim": "#dadada",
+                "on-primary-fixed-variant": "#43436c",
+                "inverse-primary": "#c3c2f3",
+                "status-warning": "#FFB800",
+                "on-tertiary-fixed": "#181c1e",
+                "inverse-on-surface": "#f0f1f1",
+                "tertiary-container": "#35393b",
+                "secondary-container": "#97f2f2",
+                "secondary-fixed-dim": "#7ad5d5",
+                "ice-blue": "#E1EAF0",
+                "tertiary-fixed": "#e0e3e5",
+                "outline-variant": "#c8c5cf",
+                "surface-variant": "#e2e2e2",
+                "surface-container-highest": "#e2e2e2",
+                "secondary": "#006a6a",
+                "secondary-fixed": "#97f2f2",
+                "on-error-container": "#93000a",
+                "background": "#f9f9f9",
+                "on-secondary-fixed-variant": "#004f50",
+                "on-primary-container": "#9e9dcc",
+                "status-success": "#4CAF50",
+                "outline": "#78767f",
+                "error-container": "#ffdad6",
+                "on-secondary-container": "#007071",
+                "on-primary-fixed": "#17173e",
+                "primary-fixed-dim": "#c3c2f3",
+                "on-tertiary-fixed-variant": "#434749",
+                "surface": "#f9f9f9",
+                "on-tertiary-container": "#9fa2a4",
+                "on-secondary": "#ffffff",
+                "on-surface": "#1a1c1c",
+                "surface-container-lowest": "#ffffff",
+                "error": "#ba1a1a",
+                "on-surface-variant": "#47464e",
+                "primary-fixed": "#e2dfff",
+                "on-error": "#ffffff",
+                "surface-container": "#eeeeee",
+                "on-secondary-fixed": "#002020",
+                "tertiary-fixed-dim": "#c4c7c9",
+                "primary": "#1e1e45",
+                "surface-container-low": "#f3f3f4",
+                "surface-tint": "#5b5a85",
+                "inverse-surface": "#2f3131",
+                "on-primary": "#ffffff",
+                "surface-container-high": "#e8e8e8",
+                "primary-container": "#34345c",
+                "on-background": "#1a1c1c",
+                "surface-bright": "#f9f9f9",
+                "on-tertiary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-desktop": "40px",
+                "container-max": "1280px",
+                "base": "8px",
+                "section-gap": "80px",
+                "margin-mobile": "16px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "label-caps": [
+                        "Inter"
+                ],
+                "headline-xl": [
+                        "Montserrat"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Montserrat"
+                ],
+                "headline-lg-mobile": [
+                        "Montserrat"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "data-tabular": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Montserrat"
+                ]
+        },
+        "fontSize": {
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-xl": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "data-tabular": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        html { scroll-behavior: smooth; }
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-outlined.fill { font-variation-settings: 'FILL' 1; }
+        @media (max-width: 767px) {
+            .section-py { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+        }
+        @media (min-width: 768px) {
+            .section-py { padding-top: 5rem; padding-bottom: 5rem; }
+        }
+        #snow-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.14;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='%231e1e45' fill-opacity='0.55'%3E%3Cpath d='M60 8l2 6 6 1-4 5 1 6-5-3-5 3 1-6-4-5 6-1z'/%3E%3Cpath d='M20 35l1.5 4.5 4.5.8-3 3.8.8 4.5-3.8-2.3-3.8 2.3.8-4.5-3-3.8 4.5-.8z'/%3E%3Cpath d='M95 42l1.2 3.6 3.6.6-2.4 3 .6 3.6-3-1.8-3 1.8.6-3.6-2.4-3 3.6-.6z'/%3E%3Cpath d='M38 88l1.8 5.4 5.4 1-3.6 4.5 1 5.4-4.5-2.7-4.5 2.7 1-5.4-3.6-4.5 5.4-1z'/%3E%3Cpath d='M82 78l1 3 3 .5-2 2.5.5 3-2.5-1.5-2.5 1.5.5-3-2-2.5 3-.5z'/%3E%3C/g%3E%3C/svg%3E");
+            background-size: 120px 120px;
+        }
+        body > *:not(#snow-bg) { position: relative; z-index: 1; }
+        .route-card {
+            transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+        .route-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px -8px rgba(30, 30, 69, 0.12);
+        }
+        .route-card--daily { border-left: 4px solid theme('colors.secondary'); }
+        .route-card--weekly { border-left: 4px solid theme('colors.primary'); }
+        .route-city {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: theme('colors.primary');
+            background: theme('colors.ice-blue');
+            border: 1px solid rgba(0, 106, 106, 0.12);
+            white-space: nowrap;
+        }
+        .route-city--start {
+            background: theme('colors.primary');
+            color: theme('colors.on-primary');
+            border-color: transparent;
+        }
+        .route-city--end {
+            background: theme('colors.secondary-fixed');
+            color: theme('colors.on-secondary-fixed');
+            border-color: transparent;
+        }
+        .route-arrow {
+            color: theme('colors.outline');
+            font-size: 1.125rem;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .route-path {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.375rem 0.25rem;
+        }
+        .benefit-card {
+            transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+        }
+        .benefit-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px -8px rgba(30, 30, 69, 0.1);
+        }
+        .retail-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.7rem;
+            border-radius: 0.5rem;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.2;
+            color: theme('colors.primary');
+            background: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.surface-variant');
+        }
+    </style>
+</head>
+<body class="antialiased">
+<div id="snow-bg" aria-hidden="true"></div>
+<!-- Navigation -->
+<nav class="bg-surface-container-lowest/95 backdrop-blur-md text-primary font-headline-md text-headline-md docked full-width top-0 sticky z-50 border-b border-surface-variant shadow-sm w-full">
+<div class="flex justify-between items-center h-14 md:h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="text-base md:text-headline-md font-headline-md font-bold text-primary hover:text-primary/80 transition-colors" href="#">Boletus-LOGISTICS</a>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#how-it-works">Как мы работаем</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#routes">Маршруты</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#about">О нас</a>
+</div>
+<div class="flex items-center gap-3">
+<button type="button" data-scroll-to="contact" class="bg-primary text-on-primary font-label-caps text-label-caps text-[11px] md:text-label-caps py-2 px-3 md:py-3 md:px-6 rounded-lg hover:bg-primary/90 transition-all shadow-sm">
+            Заявка
+        </button>
+<button type="button" id="nav-toggle" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-surface-variant text-primary" aria-label="Меню" aria-expanded="false">
+<span class="material-symbols-outlined" id="nav-toggle-icon">menu</span>
+</button>
+</div>
+</div>
+<div id="nav-mobile" class="hidden md:hidden border-t border-surface-variant bg-surface-container-lowest px-margin-mobile py-3">
+<div class="flex flex-col gap-3 max-w-container-max mx-auto">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors nav-mobile-link" href="#how-it-works">Как мы работаем</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors nav-mobile-link" href="#routes">Маршруты</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors nav-mobile-link" href="#about">О нас</a>
+</div>
+</div>
+</nav>
+<!-- 1. Enhanced Hero Section -->
+<section class="relative min-h-[72vh] md:min-h-[90vh] flex items-center pt-16 md:pt-20 section-py px-margin-mobile md:px-margin-desktop overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img alt="Boletus-LT — рефрижераторные перевозки" class="w-full h-full object-cover opacity-60" src="img.png"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="space-y-4 md:space-y-8 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-ice-blue rounded-full text-secondary font-label-caps text-[11px] md:text-label-caps">
+<span class="material-symbols-outlined text-sm">ac_unit</span>
+                    Точный температурный контроль
+                </div>
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary leading-tight">
+                    Регулярная доставка продуктов рефрижераторами
+                </h1>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant">
+                    Консолидируем сборные грузы и доставляем продукцию в торговые сети и до складов клиентов по Сибирскому, Уральскому и Центральному округам.
+                </p>
+<div class="flex flex-wrap gap-3 pt-3 md:pt-6">
+<button type="button" data-scroll-to="contact" class="bg-primary text-on-primary font-body-md text-body-md px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-primary/90 transition-all font-semibold shadow-md w-full sm:w-auto">
+                        Рассчитать стоимость
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Quick Benefits -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface" id="benefits">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-8">
+<div class="bg-surface-container-lowest p-4 md:p-8 rounded-xl shadow-sm border border-surface-variant flex flex-col gap-2 md:gap-4 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 md:w-12 md:h-12 bg-ice-blue rounded-lg flex items-center justify-center mb-0 md:mb-2">
+<span class="material-symbols-outlined text-primary text-xl md:text-2xl">route</span>
+</div>
+<h3 class="font-headline-md text-sm md:text-headline-md text-primary">Регулярные рейсы</h3>
+<p class="font-body-sm text-xs md:text-body-sm text-on-surface-variant leading-snug">Доставка рефрижераторами в температурном режиме от −18&nbsp;°C до +4&nbsp;°C.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-8 rounded-xl shadow-sm border border-surface-variant flex flex-col gap-2 md:gap-4 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 md:w-12 md:h-12 bg-ice-blue rounded-lg flex items-center justify-center mb-0 md:mb-2">
+<span class="material-symbols-outlined text-secondary text-xl md:text-2xl">warehouse</span>
+</div>
+<h3 class="font-headline-md text-sm md:text-headline-md text-primary">Ответственное хранение</h3>
+<p class="font-body-sm text-xs md:text-body-sm text-on-surface-variant leading-snug">Холодильное и морозильное оборудование на складах в г.&nbsp;Тюмень и г.&nbsp;Москве.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-8 rounded-xl shadow-sm border border-surface-variant flex flex-col gap-2 md:gap-4 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 md:w-12 md:h-12 bg-ice-blue rounded-lg flex items-center justify-center mb-0 md:mb-2">
+<span class="material-symbols-outlined text-primary text-xl md:text-2xl">inventory_2</span>
+</div>
+<h3 class="font-headline-md text-sm md:text-headline-md text-primary">Консолидация</h3>
+<p class="font-body-sm text-xs md:text-body-sm text-on-surface-variant leading-snug">Принимаем сборные грузы от 1 паллеты, доставка в торговые сети.</p>
+</div>
+<div class="bg-surface-container-lowest p-4 md:p-8 rounded-xl shadow-sm border border-surface-variant flex flex-col gap-2 md:gap-4 hover:shadow-md transition-shadow">
+<div class="w-10 h-10 md:w-12 md:h-12 bg-ice-blue rounded-lg flex items-center justify-center mb-0 md:mb-2">
+<span class="material-symbols-outlined text-secondary text-xl md:text-2xl">map</span>
+</div>
+<h3 class="font-headline-md text-sm md:text-headline-md text-primary">География</h3>
+<p class="font-body-sm text-xs md:text-body-sm text-on-surface-variant leading-snug">Сибирский, Уральский и Центральный федеральные округа.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. How it Works -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="how-it-works">
+<div class="max-w-container-max mx-auto space-y-6 md:space-y-16">
+<div class="text-center space-y-2 md:space-y-4 max-w-3xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Как мы работаем</h2>
+<p class="font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant">Прозрачный процесс от заявки до доставки.</p>
+</div>
+<ol class="md:hidden relative space-y-3">
+<li class="flex gap-3 items-start bg-surface-container-lowest rounded-xl border border-surface-variant p-3 shadow-sm">
+<span class="shrink-0 w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center text-sm font-bold">1</span>
+<div class="min-w-0 pt-0.5">
+<h4 class="font-headline-md text-sm text-primary leading-tight">Заявка</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-snug">На сайте или по телефону — опишите груз и направление.</p>
+</div>
+</li>
+<li class="flex gap-3 items-start bg-surface-container-lowest rounded-xl border border-surface-variant p-3 shadow-sm">
+<span class="shrink-0 w-9 h-9 rounded-full bg-surface-container-lowest border-2 border-ice-blue text-primary flex items-center justify-center text-sm font-bold">2</span>
+<div class="min-w-0 pt-0.5">
+<h4 class="font-headline-md text-sm text-primary leading-tight">Согласование</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-snug">Маршрут, сроки и температурный режим.</p>
+</div>
+</li>
+<li class="flex gap-3 items-start bg-surface-container-lowest rounded-xl border border-surface-variant p-3 shadow-sm">
+<span class="shrink-0 w-9 h-9 rounded-full bg-surface-container-lowest border-2 border-ice-blue text-primary flex items-center justify-center text-sm font-bold">3</span>
+<div class="min-w-0 pt-0.5">
+<h4 class="font-headline-md text-sm text-primary leading-tight">Сборка</h4>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-snug">Забор груза с адреса клиента, доставка на склад, консолидация и подготовка к отправке.</p>
+</div>
+</li>
+<li class="flex gap-3 items-start bg-primary rounded-xl border border-primary p-3 shadow-sm">
+<span class="shrink-0 w-9 h-9 rounded-full bg-on-primary/15 text-on-primary flex items-center justify-center text-sm font-bold">4</span>
+<div class="min-w-0 pt-0.5">
+<h4 class="font-headline-md text-sm text-on-primary leading-tight">Доставка</h4>
+<p class="font-body-sm text-xs text-primary-fixed-dim mt-1 leading-snug">Доставка в срок с соблюдением всех условий.</p>
+</div>
+</li>
+</ol>
+<div class="hidden md:grid md:grid-cols-4 gap-8 relative">
+<div class="absolute top-1/4 left-[10%] right-[10%] h-0.5 bg-surface-variant z-0"></div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest border-2 border-ice-blue rounded-full flex items-center justify-center text-xl font-bold text-primary">1</div>
+<h4 class="font-headline-md text-base text-primary">Заявка</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Оставьте заявку на сайте или по телефону.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest border-2 border-ice-blue rounded-full flex items-center justify-center text-xl font-bold text-primary">2</div>
+<h4 class="font-headline-md text-base text-primary">Согласование</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Уточняем детали, маршрут и температурный режим.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4">
+<div class="w-16 h-16 bg-surface-container-lowest border-2 border-ice-blue rounded-full flex items-center justify-center text-xl font-bold text-primary">3</div>
+<h4 class="font-headline-md text-base text-primary">Сборка</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Забор груза с адреса клиента, доставка на склад, консолидация и подготовка к отправке.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center gap-4">
+<div class="w-16 h-16 bg-primary border-2 border-primary rounded-full flex items-center justify-center text-xl font-bold text-on-primary">4</div>
+<h4 class="font-headline-md text-base text-primary">Доставка</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Своевременная доставка с соблюдением всех условий.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Our Routes -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface" id="routes">
+<div class="max-w-container-max mx-auto space-y-8 md:space-y-12">
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8">
+<div class="max-w-2xl space-y-2 md:space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-ice-blue rounded-full text-secondary font-label-caps text-[11px] md:text-label-caps">
+<span class="material-symbols-outlined text-sm">route</span>
+                    Регулярные рейсы
+                </div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Наши маршруты</h2>
+<p class="font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant">Рефрижераторные перевозки по фиксированному расписанию — от региональных линий до федерального магистрального рейса.</p>
+</div>
+<div class="grid grid-cols-3 gap-3 md:gap-4 lg:max-w-md w-full">
+<div class="bg-surface-container-lowest rounded-xl border border-surface-variant px-3 py-4 md:px-4 md:py-5 text-center shadow-sm">
+<p class="font-headline-lg text-xl md:text-2xl text-primary tabular-nums">3</p>
+<p class="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant mt-1">направления</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-secondary/20 px-3 py-4 md:px-4 md:py-5 text-center shadow-sm">
+<p class="font-headline-lg text-xl md:text-2xl text-secondary tabular-nums">2</p>
+<p class="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant mt-1">ежедневно</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl border border-primary/15 px-3 py-4 md:px-4 md:py-5 text-center shadow-sm">
+<p class="font-headline-lg text-xl md:text-2xl text-primary tabular-nums">1</p>
+<p class="font-label-caps text-[10px] md:text-label-caps text-on-surface-variant mt-1">раз в неделю</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
+<article class="route-card route-card--daily bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm p-5 md:p-8 flex flex-col gap-5 md:gap-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl md:text-2xl">local_shipping</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] md:text-label-caps text-outline">Маршрут 01</p>
+<h3 class="font-headline-md text-base md:text-lg text-primary mt-0.5">Уральское направление</h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary px-3 py-1.5 rounded-full font-label-caps text-[10px] md:text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">event_repeat</span>
+                        Ежедневно
+                    </span>
+</div>
+<div class="route-path" aria-label="Тюмень — Екатеринбург — Курган">
+<span class="route-city route-city--start">Тюмень</span>
+<span class="route-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+<span class="route-city">Екатеринбург</span>
+<span class="route-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+<span class="route-city route-city--end">Курган</span>
+</div>
+<ul class="flex flex-wrap gap-x-4 gap-y-2 pt-1 border-t border-surface-variant/80">
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">thermostat</span>
+                        −18&nbsp;°C … +4&nbsp;°C
+                    </li>
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline text-base">inventory_2</span>
+                        от 1 паллеты
+                    </li>
+</ul>
+</article>
+<article class="route-card route-card--daily bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm p-5 md:p-8 flex flex-col gap-5 md:gap-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-xl md:text-2xl">local_shipping</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] md:text-label-caps text-outline">Маршрут 02</p>
+<h3 class="font-headline-md text-base md:text-lg text-primary mt-0.5">Сибирское направление</h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 bg-secondary/10 text-secondary px-3 py-1.5 rounded-full font-label-caps text-[10px] md:text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">event_repeat</span>
+                        Ежедневно
+                    </span>
+</div>
+<div class="route-path" aria-label="Тюмень — Ишим — Омск">
+<span class="route-city route-city--start">Тюмень</span>
+<span class="route-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+<span class="route-city">Ишим</span>
+<span class="route-arrow material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+<span class="route-city route-city--end">Омск</span>
+</div>
+<ul class="flex flex-wrap gap-x-4 gap-y-2 pt-1 border-t border-surface-variant/80">
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">thermostat</span>
+                        −18&nbsp;°C … +4&nbsp;°C
+                    </li>
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline text-base">inventory_2</span>
+                        от 1 паллеты
+                    </li>
+</ul>
+</article>
+</div>
+<article class="route-card route-card--weekly relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-container rounded-2xl border border-primary-container shadow-lg p-5 md:p-10 text-on-primary flex flex-col gap-6 md:gap-8">
+<div class="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-ice-blue/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" aria-hidden="true"></div>
+<div class="relative flex flex-col md:flex-row md:items-start md:justify-between gap-4 md:gap-6">
+<div class="flex items-center gap-3 md:gap-4">
+<div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-on-primary/10 flex items-center justify-center shrink-0 border border-on-primary/15">
+<span class="material-symbols-outlined text-ice-blue text-2xl md:text-3xl">distance</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] md:text-label-caps text-primary-fixed-dim">Маршрут 03 · магистральный</p>
+<h3 class="font-headline-md text-lg md:text-xl text-on-primary mt-0.5">Федеральная линия</h3>
+<p class="font-body-sm text-sm md:text-body-sm text-primary-fixed-dim mt-1 max-w-xl">Связь Центрального, Приволжского, Уральского и Сибирского регионов в одном рейсе.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 self-start bg-on-primary/15 text-ice-blue border border-on-primary/20 px-3 py-1.5 md:px-4 md:py-2 rounded-full font-label-caps text-[10px] md:text-xs shrink-0">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+                    Раз в неделю
+                </span>
+</div>
+<div class="relative route-path" aria-label="Москва — Казань — Уфа — Екатеринбург — Тюмень — Омск — Новосибирск">
+<span class="route-city route-city--start !bg-on-primary !text-primary !border-transparent">Москва</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-on-primary/20 !text-ice-blue !border-on-primary/25">Казань</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-on-primary/20 !text-ice-blue !border-on-primary/25">Уфа</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-on-primary/20 !text-ice-blue !border-on-primary/25">Екатеринбург</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-on-primary/20 !text-ice-blue !border-on-primary/25">Тюмень</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-on-primary/20 !text-ice-blue !border-on-primary/25">Омск</span>
+<span class="route-arrow material-symbols-outlined !text-primary-fixed-dim" aria-hidden="true">arrow_forward</span>
+<span class="route-city !bg-secondary-fixed !text-on-secondary-fixed !border-transparent">Новосибирск</span>
+</div>
+<div class="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2 border-t border-on-primary/20">
+<ul class="flex flex-wrap gap-x-5 gap-y-2">
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-primary-fixed-dim">
+<span class="material-symbols-outlined text-ice-blue text-base">ac_unit</span>
+                        7 городов · рефрижератор
+                    </li>
+<li class="flex items-center gap-1.5 font-body-sm text-xs md:text-body-sm text-primary-fixed-dim">
+<span class="material-symbols-outlined text-ice-blue text-base">thermostat</span>
+                        мультитемпературный режим
+                    </li>
+</ul>
+<button type="button" data-scroll-to="contact" class="inline-flex items-center justify-center gap-2 bg-on-primary text-primary font-label-caps text-[11px] md:text-label-caps px-5 py-2.5 md:py-3 rounded-lg hover:bg-ice-blue transition-colors shadow-sm w-full sm:w-auto shrink-0">
+<span class="material-symbols-outlined text-lg">chat</span>
+                    Уточнить рейс
+                </button>
+</div>
+</article>
+</div>
+</section>
+<!-- 5. Multi-Zone Logic -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+<div class="space-y-4 md:space-y-6">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg">Мультитемпературные перевозки</h2>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-primary-fixed-dim">
+                    Наши рефрижераторы оборудованы мультитемпературными установками, что позволяет перевозить различные типы грузов в одном транспортном средстве одновременно, поддерживая разные климатические зоны.
+                </p>
+<div class="space-y-4 pt-4">
+<div class="flex items-center gap-3 md:gap-4 bg-primary-container p-3 md:p-4 rounded-lg">
+<div class="w-12 h-12 bg-ice-blue/20 rounded-full flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined">ac_unit</span>
+</div>
+<div>
+<h4 class="font-headline-md text-base text-on-primary">Глубокая заморозка</h4>
+<p class="font-body-sm text-primary-fixed-dim">-18°C для заморозки.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 md:gap-4 bg-primary-container p-3 md:p-4 rounded-lg">
+<div class="w-12 h-12 bg-ice-blue/20 rounded-full flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined">kitchen</span>
+</div>
+<div>
+<h4 class="font-headline-md text-base text-on-primary">Охлаждение</h4>
+<p class="font-body-sm text-primary-fixed-dim">Точный контроль от -5°C до +4°C.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container rounded-2xl p-4 md:p-8 border border-surface-tint">
+<div class="rounded-xl bg-surface-container-lowest/5 border border-surface-tint/50 p-4 md:p-6 md:aspect-[4/3] flex items-center justify-center">
+<!-- Simplified diagram representation -->
+<div class="w-full max-w-sm flex flex-col gap-2.5 md:gap-3">
+<div class="flex items-center justify-between gap-2 px-3 py-2.5 md:px-4 md:py-3 bg-secondary-fixed/20 rounded-lg border border-secondary-fixed/30">
+<span class="font-headline-md text-xs md:text-sm text-secondary-fixed leading-tight">Зона 1: Морозильная</span>
+<span class="font-headline-md text-base md:text-lg text-secondary-fixed shrink-0">-18°C</span>
+</div>
+<div class="flex items-center justify-between gap-2 px-3 py-2.5 md:px-4 md:py-3 bg-ice-blue/20 rounded-lg border border-ice-blue/30">
+<span class="font-headline-md text-xs md:text-sm text-ice-blue leading-tight">Зона 2: Охлаждение</span>
+<span class="font-headline-md text-base md:text-lg text-ice-blue shrink-0">-5°C</span>
+</div>
+<div class="flex items-center justify-between gap-2 px-3 py-2.5 md:px-4 md:py-3 bg-surface-container-lowest/20 rounded-lg border border-surface-container-lowest/30">
+<span class="font-headline-md text-xs md:text-sm text-surface-container-lowest leading-tight">Зона 3: Свежие</span>
+<span class="font-headline-md text-base md:text-lg text-surface-container-lowest shrink-0">+4°C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Cargo Types -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto space-y-6 md:space-y-12">
+<div class="text-center space-y-2 md:space-y-4 max-w-3xl mx-auto">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Что мы перевозим</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Соблюдаем специфические требования для каждой категории продуктов.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+<div class="border border-surface-variant rounded-xl p-4 md:p-6 flex flex-col items-center text-center gap-2 md:gap-4 hover:border-ice-blue hover:bg-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary">grass</span>
+<span class="font-headline-md text-base text-primary">Грибы и зелень</span>
+</div>
+<div class="border border-surface-variant rounded-xl p-4 md:p-6 flex flex-col items-center text-center gap-2 md:gap-4 hover:border-ice-blue hover:bg-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary">set_meal</span>
+<span class="font-headline-md text-base text-primary">Мясо и рыба</span>
+</div>
+<div class="border border-surface-variant rounded-xl p-4 md:p-6 flex flex-col items-center text-center gap-2 md:gap-4 hover:border-ice-blue hover:bg-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary">egg</span>
+<span class="font-headline-md text-base text-primary">Молочная продукция</span>
+</div>
+<div class="border border-surface-variant rounded-xl p-4 md:p-6 flex flex-col items-center text-center gap-2 md:gap-4 hover:border-ice-blue hover:bg-surface transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-3xl md:text-4xl text-primary">local_pizza</span>
+<span class="font-headline-md text-base text-primary">Полуфабрикаты</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Why Choose Us -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface" id="benefits-b2b">
+<div class="max-w-container-max mx-auto space-y-8 md:space-y-12">
+<div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 md:gap-8">
+<div class="max-w-2xl space-y-2 md:space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 bg-ice-blue rounded-full text-secondary font-label-caps text-[11px] md:text-label-caps">
+<span class="material-symbols-outlined text-sm">corporate_fare</span>
+                    B2B-партнёрам
+                </div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Преимущества для B2B</h2>
+<p class="font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant">Логистика под задачи поставщиков и дистрибьюторов: от одной паллеты до регулярных поставок в федеральные сети.</p>
+</div>
+<div class="flex flex-wrap gap-2 lg:justify-end">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-surface-variant font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">verified</span>
+                    15+ лет на рынке
+                </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest border border-surface-variant font-label-caps text-[10px] md:text-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">inventory_2</span>
+                    от 1 паллеты
+                </span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-6">
+<article class="benefit-card benefit-card--featured relative overflow-hidden bg-gradient-to-br from-ice-blue via-surface-container-lowest to-surface-container-lowest rounded-2xl border border-secondary/25 shadow-sm p-5 md:p-8 flex flex-col gap-5 md:gap-6">
+<div class="absolute -bottom-8 -right-8 w-32 h-32 md:w-40 md:h-40 rounded-full bg-secondary/5 pointer-events-none" aria-hidden="true"></div>
+<div class="relative flex items-start gap-4">
+<div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-secondary/15 flex items-center justify-center shrink-0 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">public</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] md:text-label-caps text-secondary">Ключевое преимущество</p>
+<h3 class="font-headline-md text-lg md:text-xl text-primary mt-0.5">Расширение географии</h3>
+</div>
+</div>
+<p class="relative font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant leading-relaxed">
+                    Перспектива расширения географии клиентов в новом городе без переживаний по поводу доставки.
+                </p>
+<ul class="relative flex flex-wrap gap-3 pt-1">
+<li class="flex items-center gap-2 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-base">add_location_alt</span>
+</span>
+                        Новые города — те же стандарты
+                    </li>
+<li class="flex items-center gap-2 font-body-sm text-xs md:text-body-sm text-on-surface-variant">
+<span class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-base">schedule</span>
+</span>
+                        Регулярное расписание рейсов
+                    </li>
+</ul>
+</article>
+<article class="benefit-card benefit-card--featured relative overflow-hidden bg-surface-container-lowest rounded-2xl border border-primary/15 shadow-sm p-5 md:p-8 flex flex-col gap-5 md:gap-6">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary-container" aria-hidden="true"></div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl md:text-3xl">storefront</span>
+</div>
+<div>
+<p class="font-label-caps text-[10px] md:text-label-caps text-outline">Торговые сети</p>
+<h3 class="font-headline-md text-lg md:text-xl text-primary mt-0.5">Доставка в сети</h3>
+</div>
+</div>
+<p class="font-body-sm md:font-body-md text-body-sm md:text-body-md text-on-surface-variant leading-relaxed">
+                    Доставка <strong class="text-primary font-semibold">от одной паллеты</strong> в федеральные и региональные сети:
+                </p>
+<div class="flex flex-wrap gap-2">
+<span class="retail-chip">ОКЕЙ</span>
+<span class="retail-chip">ЛЕНТА</span>
+<span class="retail-chip">МЕТРО</span>
+<span class="retail-chip">АШАН</span>
+<span class="retail-chip">ЯНДЕКС ЛАВКА</span>
+<span class="retail-chip !bg-ice-blue !border-secondary/20 !text-secondary">и другие</span>
+</div>
+</article>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
+<article class="benefit-card bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm p-5 md:p-6 flex flex-col gap-4 h-full">
+<div class="w-11 h-11 rounded-xl bg-ice-blue flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">description</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-base text-primary">Документооборот</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Полный комплект закрывающих документов, работа с ЭДО, строгий контроль путевых листов и ТТН.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-label-caps text-[10px] text-secondary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+                    ЭДО
+                </span>
+</article>
+<article class="benefit-card bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm p-5 md:p-6 flex flex-col gap-4 h-full">
+<div class="w-11 h-11 rounded-xl bg-ice-blue flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">shield</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-base text-primary">Страхование</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Ответственность перевозчика застрахована. Гарантируем сохранность груза и температурного режима.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-label-caps text-[10px] text-secondary">
+<span class="material-symbols-outlined text-sm">ac_unit</span>
+                    температурный контроль
+                </span>
+</article>
+<article class="benefit-card bg-surface-container-lowest rounded-2xl border border-surface-variant shadow-sm p-5 md:p-6 flex flex-col gap-4 h-full">
+<div class="w-11 h-11 rounded-xl bg-ice-blue flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">payments</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-md text-base text-primary">Гибкие тарифы</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">Индивидуальные условия для постоянных клиентов, прозрачное ценообразование без скрытых платежей.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-label-caps text-[10px] text-secondary">
+<span class="material-symbols-outlined text-sm">handshake</span>
+                    для постоянных клиентов
+                </span>
+</article>
+</div>
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 p-5 md:p-8 rounded-2xl bg-primary text-on-primary shadow-md">
+<div class="space-y-1 max-w-xl">
+<p class="font-label-caps text-[10px] md:text-label-caps text-primary-fixed-dim">Следующий шаг</p>
+<p class="font-headline-md text-base md:text-lg text-on-primary">Обсудим ваш маршрут и объём — подберём оптимальный тариф</p>
+</div>
+<button type="button" data-scroll-to="contact" class="inline-flex items-center justify-center gap-2 bg-on-primary text-primary font-label-caps text-[11px] md:text-label-caps px-6 py-3 rounded-lg hover:bg-ice-blue transition-colors shadow-sm w-full md:w-auto shrink-0">
+<span class="material-symbols-outlined text-lg">calculate</span>
+                Рассчитать перевозку
+            </button>
+</div>
+</div>
+</section>
+<!-- About -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-low" id="about">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:items-stretch">
+<div class="space-y-4 md:space-y-6">
+<p class="font-label-caps text-label-caps text-secondary">О компании</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">ООО «Болетус»</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    ООО «Болетус» работает на рынке более 15 лет и занимается полным циклом заготовки лесных грибов — от сбора в экологически чистых лесах России до доставки «даров природы» непосредственно к столу потребителя.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    На протяжении всей истории мы сталкивались с задачей доставки небольших грузов, поскольку логистика напрямую влияет на конечную стоимость продукта. Чтобы минимизировать эти расходы, наши специалисты организовали строгий контроль температурного режима: установили мощные холодильные и морозильные установки на складах и сформировали собственный транспортный парк, что позволило создать дополнительную ценность для клиентов.
+                </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Мы хотим поделиться своим опытом и помочь поставщикам и дистрибьюторам в решении задач по доставке и снижению логистических издержек.
+                </p>
+</div>
+<div class="flex flex-col min-h-0 lg:min-h-full">
+<div class="flex flex-1 items-center justify-center py-4 lg:py-0">
+<img alt="ООО «Болетус»" class="max-w-full max-h-40 sm:max-h-48 md:max-h-56 w-auto object-contain" src="logo.png"/>
+</div>
+<div class="flex flex-row flex-nowrap justify-center items-center gap-2 sm:gap-4 md:gap-6 w-full max-w-full shrink-0 pt-4 lg:pt-6 mt-auto">
+<a class="inline-flex items-center gap-1 sm:gap-2 md:gap-3 px-2 py-1.5 sm:px-4 sm:py-3 md:px-6 md:py-4 rounded-lg md:rounded-xl bg-surface-container-lowest border border-surface-variant hover:border-secondary hover:shadow-md transition-all group min-w-0 shadow-sm" href="tel:+79959407140">
+<span class="material-symbols-outlined text-secondary !text-[17px] sm:!text-xl shrink-0 group-hover:scale-110 transition-transform">call</span>
+<span class="text-[9px] sm:text-xs md:text-body-md text-primary font-medium leading-none sm:leading-tight whitespace-nowrap tracking-tight sm:tracking-normal">8-995-940-71-40</span>
+</a>
+<a class="inline-flex items-center gap-1 sm:gap-2 md:gap-3 px-2 py-1.5 sm:px-4 sm:py-3 md:px-6 md:py-4 rounded-lg md:rounded-xl bg-surface-container-lowest border border-surface-variant hover:border-secondary hover:shadow-md transition-all group min-w-0 shadow-sm" href="mailto:boletus18@mail.ru">
+<span class="material-symbols-outlined text-secondary !text-[17px] sm:!text-xl shrink-0 group-hover:scale-110 transition-transform">mail</span>
+<span class="text-[9px] sm:text-xs md:text-body-md text-primary font-medium leading-none sm:leading-tight whitespace-nowrap tracking-tight sm:tracking-normal">boletus18@mail.ru</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. CTA & Contact Form -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="contact">
+<div class="max-w-4xl mx-auto bg-primary text-on-primary rounded-2xl p-5 md:p-16 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-50"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+<div class="space-y-4 md:space-y-6">
+<h2 class="font-headline-lg text-headline-lg">Оставьте заявку на расчет</h2>
+<p class="font-body-md text-primary-fixed-dim">
+                    Заполните форму, и наш менеджер свяжется с вами в течение 15 минут для уточнения деталей перевозки.
+                </p>
+<div class="space-y-4 pt-4">
+<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="tel:+79959407140">
+<span class="material-symbols-outlined">call</span>
+<span>8-995-940-71-40</span>
+</a>
+<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="mailto:boletus18@mail.ru">
+<span class="material-symbols-outlined">mail</span>
+<span>boletus18@mail.ru</span>
+</a>
+</div>
+</div>
+<form class="bg-surface-container-lowest p-6 rounded-xl space-y-4 text-on-surface" id="contact-form" novalidate>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="name">Ваше имя</label>
+<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="name" name="name" placeholder="Иван Иванов" type="text" required autocomplete="name"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="phone">Телефон</label>
+<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="phone" name="phone" placeholder="8-995-940-71-40" type="tel" required autocomplete="tel"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="comment">Комментарий (откуда, куда, что везём)</label>
+<textarea class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright h-24 resize-none" id="comment" name="comment" placeholder="Детали груза..." required></textarea>
+</div>
+<button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps py-3 rounded-md hover:bg-secondary/90 transition-colors mt-2">
+                    Отправить заявку
+                </button>
+<p id="form-status" class="font-body-sm text-xs text-center mt-4 hidden" role="status"></p>
+<p class="font-body-sm text-xs text-outline text-center mt-2">
+                    Нажимая кнопку, вы соглашаетесь на обработку контактных данных для связи по заявке
+                </p>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-tertiary text-on-tertiary border-t border-tertiary-container">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-10 md:py-16">
+<div class="flex flex-col items-center text-center gap-5 md:gap-8">
+<div class="w-16 h-px bg-gradient-to-r from-transparent via-secondary-fixed/60 to-transparent"></div>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tight text-on-tertiary">Boletus-LT</p>
+<p class="font-body-sm text-tertiary-fixed-dim max-w-md leading-relaxed">
+                    Регулярные рефрижераторные перевозки продуктов питания. Температурный контроль, консолидация, B2B.
+                </p>
+<div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
+<a class="group inline-flex items-center gap-2 font-body-md text-on-tertiary hover:text-secondary-fixed transition-colors" href="tel:+79959407140">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">call</span>
+<span>8-995-940-71-40</span>
+</a>
+<span class="hidden sm:block w-px h-5 bg-tertiary-container" aria-hidden="true"></span>
+<a class="group inline-flex items-center gap-2 font-body-md text-on-tertiary hover:text-secondary-fixed transition-colors" href="mailto:boletus18@mail.ru">
+<span class="material-symbols-outlined text-secondary-fixed text-lg">mail</span>
+<span>boletus18@mail.ru</span>
+</a>
+</div>
+<div class="w-16 h-px bg-gradient-to-r from-transparent via-secondary-fixed/60 to-transparent"></div>
+<p class="font-label-caps text-label-caps text-tertiary-fixed-dim/80">© 2026 Boletus-LT</p>
+</div>
+</div>
+</footer>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 rounded-lg bg-primary text-on-primary font-body-sm shadow-lg opacity-0 pointer-events-none transition-opacity duration-300" role="alert"></div>
+<script src="main.js" defer></script>
+</body></html>
