@@ -1,6 +1,4 @@
 (function () {
-  var CONTACT_EMAIL = 'boletus18@mail.ru';
-
   function scrollToId(id) {
     var el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -50,8 +48,23 @@
     }, 4000);
   }
 
+  function setStatus(status, message, type) {
+    if (!status) return;
+    var base = 'font-body-sm text-xs text-center mt-4';
+    var color = 'text-on-surface-variant';
+    if (type === 'error') color = 'text-error';
+    else if (type === 'success') color = 'text-secondary';
+    else if (type === 'loading') color = 'text-on-surface-variant';
+    status.textContent = message;
+    status.className = base + ' ' + color;
+    status.classList.remove('hidden');
+  }
+
   var form = document.getElementById('contact-form');
   if (form) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalBtnText = submitBtn ? submitBtn.textContent : '';
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = (document.getElementById('name').value || '').trim();
@@ -60,27 +73,43 @@
       var status = document.getElementById('form-status');
 
       if (!name || !phone || !comment) {
-        if (status) {
-          status.textContent = 'Заполните все поля формы';
-          status.className = 'font-body-sm text-xs text-center mt-4 text-error';
-          status.classList.remove('hidden');
-        }
+        setStatus(status, 'Заполните все поля формы', 'error');
         return;
       }
 
-      var subject = encodeURIComponent('Заявка с сайта Boletus-LT');
-      var body = encodeURIComponent(
-        'Имя: ' + name + '\nТелефон: ' + phone + '\n\nКомментарий:\n' + comment
-      );
-      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
-
-      if (status) {
-        status.textContent = 'Откроется почтовый клиент — отправьте письмо или позвоните нам';
-        status.className = 'font-body-sm text-xs text-center mt-4 text-secondary';
-        status.classList.remove('hidden');
+      setStatus(status, 'Отправляем заявку…', 'loading');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Отправка...';
       }
-      showToast('Заявка подготовлена — проверьте почтовый клиент');
-      form.reset();
+
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error('Network response was not ok');
+          form.reset();
+          setStatus(status, 'Спасибо! Заявка отправлена — мы свяжемся с вами в ближайшее время.', 'success');
+          showToast('Заявка отправлена — мы свяжемся с вами в ближайшее время');
+        })
+        .catch(function () {
+          setStatus(
+            status,
+            'Не удалось отправить форму. Позвоните нам по телефону 8-995-940-71-40 или попробуйте ещё раз.',
+            'error'
+          );
+          showToast('Ошибка отправки — попробуйте ещё раз или позвоните нам');
+        })
+        .then(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText || 'Отправить заявку';
+          }
+        });
     });
   }
 })();

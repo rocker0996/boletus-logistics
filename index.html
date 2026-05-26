@@ -833,7 +833,7 @@
 </a>
 </div>
 </div>
-<form class="bg-surface-container-lowest p-6 rounded-xl space-y-4 text-on-surface" id="contact-form" novalidate>
+<form class="bg-surface-container-lowest p-6 rounded-xl space-y-4 text-on-surface" id="contact-form" action="https://formspree.io/f/xjkapqqn" method="POST" novalidate>
 <div>
 <label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="name">Ваше имя</label>
 <input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="name" name="name" placeholder="Иван Иванов" type="text" required autocomplete="name"/>
@@ -844,8 +844,10 @@
 </div>
 <div>
 <label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="comment">Комментарий (откуда, куда, что везём)</label>
-<textarea class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright h-24 resize-none" id="comment" name="comment" placeholder="Детали груза..." required></textarea>
+<textarea class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright h-24 resize-none" id="comment" name="message" placeholder="Детали груза..." required></textarea>
 </div>
+<input type="hidden" name="_subject" value="Заявка с сайта Boletus-LT (логистика)"/>
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
 <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps py-3 rounded-md hover:bg-secondary/90 transition-colors mt-2">
                     Отправить заявку
                 </button>
