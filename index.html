@@ -1031,7 +1031,54 @@
 </div>
 </div>
 </section>
-<!-- 7.5 FAQ -->
+<!-- 8. CTA & Contact Form -->
+<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="contact">
+<div class="max-w-4xl mx-auto bg-primary text-on-primary rounded-2xl p-5 md:p-16 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-50"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+<div class="space-y-4 md:space-y-6">
+<h2 class="font-headline-lg text-headline-lg">Оставьте заявку на расчет</h2>
+<p class="font-body-md text-primary-fixed-dim">
+                    Заполните форму, и наш менеджер свяжется с вами в течение 15 минут для уточнения деталей перевозки.
+                </p>
+<div class="space-y-4 pt-4">
+<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="tel:+79959407140">
+<span class="material-symbols-outlined">call</span>
+<span>8-995-940-71-40</span>
+</a>
+<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="mailto:boletus18@mail.ru">
+<span class="material-symbols-outlined">mail</span>
+<span>boletus18@mail.ru</span>
+</a>
+</div>
+</div>
+<form class="bg-surface-container-lowest p-6 rounded-xl space-y-4 text-on-surface" id="contact-form" action="https://formspree.io/f/xjkapqqn" method="POST" novalidate>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="name">Ваше имя</label>
+<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="name" name="name" placeholder="Иван Иванов" type="text" required autocomplete="name"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="phone">Телефон</label>
+<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="phone" name="phone" placeholder="8-995-940-71-40" type="tel" required autocomplete="tel"/>
+</div>
+<div>
+<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="comment">Комментарий (откуда, куда, что везём)</label>
+<textarea class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright h-24 resize-none" id="comment" name="message" placeholder="Детали груза..." required></textarea>
+</div>
+<input type="hidden" name="_subject" value="Заявка с сайта Boletus-LT (логистика)"/>
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
+<button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps py-3 rounded-md hover:bg-secondary/90 transition-colors mt-2">
+                    Отправить заявку
+                </button>
+<p id="form-status" class="font-body-sm text-xs text-center mt-4 hidden" role="status"></p>
+<p class="font-body-sm text-xs text-outline text-center mt-2">
+                    Нажимая кнопку, вы соглашаетесь на обработку контактных данных для связи по заявке
+                </p>
+</form>
+</div>
+</div>
+</section>
+<!-- 9. FAQ -->
 <section class="section-py px-margin-mobile md:px-margin-desktop bg-surface" id="faq">
 <div class="max-w-container-max mx-auto space-y-6 md:space-y-12">
 <div class="text-center space-y-2 md:space-y-4 max-w-3xl mx-auto">
@@ -1115,53 +1162,6 @@
 <span class="material-symbols-outlined text-lg">chat</span>
                     Задать свой вопрос
                 </button>
-</div>
-</div>
-</section>
-<!-- 8. CTA & Contact Form -->
-<section class="section-py px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="contact">
-<div class="max-w-4xl mx-auto bg-primary text-on-primary rounded-2xl p-5 md:p-16 shadow-xl relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container rounded-full translate-x-1/3 -translate-y-1/3 blur-3xl opacity-50"></div>
-<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-<div class="space-y-4 md:space-y-6">
-<h2 class="font-headline-lg text-headline-lg">Оставьте заявку на расчет</h2>
-<p class="font-body-md text-primary-fixed-dim">
-                    Заполните форму, и наш менеджер свяжется с вами в течение 15 минут для уточнения деталей перевозки.
-                </p>
-<div class="space-y-4 pt-4">
-<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="tel:+79959407140">
-<span class="material-symbols-outlined">call</span>
-<span>8-995-940-71-40</span>
-</a>
-<a class="flex items-center gap-3 text-primary-fixed-dim hover:text-on-primary transition-colors" href="mailto:boletus18@mail.ru">
-<span class="material-symbols-outlined">mail</span>
-<span>boletus18@mail.ru</span>
-</a>
-</div>
-</div>
-<form class="bg-surface-container-lowest p-6 rounded-xl space-y-4 text-on-surface" id="contact-form" action="https://formspree.io/f/xjkapqqn" method="POST" novalidate>
-<div>
-<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="name">Ваше имя</label>
-<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="name" name="name" placeholder="Иван Иванов" type="text" required autocomplete="name"/>
-</div>
-<div>
-<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="phone">Телефон</label>
-<input class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright" id="phone" name="phone" placeholder="8-995-940-71-40" type="tel" required autocomplete="tel"/>
-</div>
-<div>
-<label class="block font-label-caps text-xs text-on-surface-variant mb-1" for="comment">Комментарий (откуда, куда, что везём)</label>
-<textarea class="w-full border border-surface-variant rounded-md px-4 py-2 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none font-body-sm bg-surface-bright h-24 resize-none" id="comment" name="message" placeholder="Детали груза..." required></textarea>
-</div>
-<input type="hidden" name="_subject" value="Заявка с сайта Boletus-LT (логистика)"/>
-<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
-<button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps py-3 rounded-md hover:bg-secondary/90 transition-colors mt-2">
-                    Отправить заявку
-                </button>
-<p id="form-status" class="font-body-sm text-xs text-center mt-4 hidden" role="status"></p>
-<p class="font-body-sm text-xs text-outline text-center mt-2">
-                    Нажимая кнопку, вы соглашаетесь на обработку контактных данных для связи по заявке
-                </p>
-</form>
 </div>
 </div>
 </section>
